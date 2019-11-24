@@ -57,13 +57,7 @@ class InteractiveRecord
     column_name = row.keys[0].to_s
     value_name = row.values[0]
 
-    sql = <<-SQL
-      SELECT * FROM #{table_name}
-      WHERE #{column_name} = ?
-    SQL
-
-    DB[:conn].execute("SELECT * FROM #{table_name}
-    WHERE #{column_name} = ?", value_name);
+    DB[:conn].execute("SELECT * FROM #{table_name} WHERE #{column_name} = ?", value_name);
   end
 
 end
