@@ -57,7 +57,7 @@ class InteractiveRecord
     column = row.keys[0].to_s
     value = row.values[0]
 
-    DB[:conn].execute("SELECT * FROM #{table_name} WHERE #{column} = ?", value_name);
+    DB[:conn].execute("SELECT * FROM #{table_name} WHERE #{column} = ?", value);
   end
 
 end
